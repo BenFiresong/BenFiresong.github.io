@@ -278,6 +278,17 @@
   </header>
 
   <div class="section">
+    <div class="section-title gold">🎂 Special Events</div>
+    <div class="commands">
+      <div class="command special">
+        <span class="cmd gold-cmd" onclick="copy(this,'!birthday')">!birthday <span class="icon">⧉</span></span>
+        <span class="cmd gold-cmd" onclick="copy(this,'!bd')">!bd <span class="icon">⧉</span></span>
+        <span class="inline-desc gold">full details about the 28 hour birthday stream on 4 July 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
     <div class="section-title">🎮 Games</div>
     <div class="commands">
       <div class="command">
@@ -288,7 +299,6 @@
         <span class="cmd" onclick="copy(this,'!ws')">!ws <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!wanderstop')">!wanderstop <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'bg3')">bg3 <span class="icon">⧉</span></span>
-        <p class="desc">info about the current game</p>
       </div>
     </div>
   </div>
@@ -298,7 +308,7 @@
     <div class="commands">
       <div class="command">
         <span class="cmd" onclick="copy(this,'!add ')">!add [ingredient] <span class="icon">⧉</span></span>
-        <span class="inline-desc">throw something into the cauldron</span>
+        <span class="inline-desc">add something to the cauldron</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!cauldron')">!cauldron <span class="icon">⧉</span></span>
@@ -317,7 +327,6 @@
         <span class="cmd" onclick="copy(this,'!ignis')">!ignis <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!ember')">!ember <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!ignite')">!ignite <span class="icon">⧉</span></span>
-        <p class="desc">followers only · one entry per person · not affiliated with Twitch</p>
       </div>
       <div class="command">
         <span class="label">Claim:</span>
@@ -326,7 +335,6 @@
         <span class="cmd" onclick="copy(this,'!snatch')">!snatch <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!bind')">!bind <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!summon')">!summon <span class="icon">⧉</span></span>
-        <p class="desc">claim your prize if you've been drawn as a winner</p>
       </div>
     </div>
   </div>
@@ -337,13 +345,13 @@
       <div class="command">
         <span class="cmd" onclick="copy(this,'!plush')">!plush <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!plushie')">!plushie <span class="icon">⧉</span></span>
-        <span class="inline-desc">logs a plushie drop, adds 1 to the count</span>
+        <span class="inline-desc">logs a plushie drop, adds 1 to the session count</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!dp')">!dp <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!doublePlush')">!doublePlush <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!doublePlushie')">!doublePlushie <span class="icon">⧉</span></span>
-        <span class="inline-desc">logs a double drop, adds 2</span>
+        <span class="inline-desc">logs a double plushie drop, adds 2 to the session count</span>
       </div>
     </div>
   </div>
@@ -375,12 +383,12 @@
         <span class="inline-desc">let chat know you're back from lurk mode</span>
       </div>
       <div class="command">
-        <span class="cmd" onclick="copy(this,'!hbd ')">!hbd [@user] <span class="icon">⧉</span></span>
-        <span class="inline-desc">happy birthday, optional @ someone 🎂</span>
+        <span class="cmd" onclick="copy(this,'!hbd ')">!hbd <span class="icon">⧉</span></span>
+        <span class="inline-desc">happy birthday, optional @ someone</span>
       </div>
       <div class="command">
-        <span class="cmd" onclick="copy(this,'!shbd ')">!shbd [@user] <span class="icon">⧉</span></span>
-        <span class="inline-desc">super happy birthday · once every 20 min</span>
+        <span class="cmd" onclick="copy(this,'!shbd ')">!shbd <span class="icon">⧉</span></span>
+        <span class="inline-desc">super happy birthday, once every 20 min, optional @ someone</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!streams')">!streams <span class="icon">⧉</span></span>
@@ -388,22 +396,18 @@
         <span class="inline-desc">how many times Ben has gone live</span>
       </div>
       <div class="command">
-        <span class="cmd" onclick="copy(this,'!sass')">!sass <span class="icon">⧉</span></span>
-        <span class="inline-desc">get your sass level read by the universe 💅 <span class="badge badge-ai">AI</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!cast ')">!cast [optional] <span class="icon">⧉</span></span>
-        <span class="inline-desc">cast a spell for yourself or the stream <span class="badge badge-ai">AI</span></span>
+        <span class="cmd" onclick="copy(this,'!cast ')">!cast [optional: anything on your mind] <span class="icon">⧉</span></span>
+        <span class="inline-desc">cast a spell for yourself and the stream</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!casts')">!casts <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!spells')">!spells <span class="icon">⧉</span></span>
-        <span class="inline-desc">see how many spells have been cast ✨</span>
+        <span class="inline-desc">see how many spells have been cast</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!dance')">!dance <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!shimmy')">!shimmy <span class="icon">⧉</span></span>
-        <span class="inline-desc">get your hips and shoulders going 💃</span>
+        <span class="inline-desc">get your hips and shoulders going</span>
       </div>
     </div>
   </div>
@@ -434,11 +438,11 @@
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!raid')">!raid <span class="icon">⧉</span></span>
-        <span class="inline-desc">send a raid message personalised to your role 🔥</span>
+        <span class="inline-desc">send a raid message to chat, with emotes matched to whether you're a sub, follower, or newcomer</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!throne')">!throne <span class="icon">⧉</span></span>
-        <span class="inline-desc">links to the Throne wishlist 💛</span>
+        <span class="inline-desc">If you ever want to show a little more love, I have a Throne wishlist</span>
       </div>
     </div>
   </div>
@@ -460,13 +464,14 @@
         <span class="cmd" onclick="copy(this,'!valentine')">!valentine <span class="icon">⧉</span></span>
       </div>
       <div class="command">
-        <span class="cmd" onclick="copy(this,'!suggest ')">!suggest [idea] <span class="icon">⧉</span></span>
+        <span class="cmd" onclick="copy(this,'!suggest ')">!suggest [your suggestion] <span class="icon">⧉</span></span>
         <span class="inline-desc">got an idea? throw it in!</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!dsd')">!dsd <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!daddy')">!daddy <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!sd')">!sd <span class="icon">⧉</span></span>
+        <span class="cmd" onclick="copy(this,'!sugar daddy')">!sugar daddy <span class="icon">⧉</span></span>
         <span class="inline-desc">👀</span>
       </div>
     </div>
@@ -477,7 +482,7 @@
     <div class="commands">
       <div class="command">
         <span class="cmd" onclick="copy(this,'!accountage')">!accountage <span class="icon">⧉</span></span>
-        <span class="inline-desc">how long your Twitch account has existed</span>
+        <span class="inline-desc">how long your account has existed</span>
       </div>
       <div class="command">
         <span class="cmd" onclick="copy(this,'!followage')">!followage <span class="icon">⧉</span></span>
@@ -490,17 +495,6 @@
       <div class="command">
         <span class="cmd" onclick="copy(this,'!emotes')">!emotes <span class="icon">⧉</span></span>
         <span class="inline-desc">active BTTV emotes in chat</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title gold">🎂 Special Events</div>
-    <div class="commands">
-      <div class="command special">
-        <span class="cmd gold-cmd" onclick="copy(this,'!birthday')">!birthday <span class="icon">⧉</span></span>
-        <span class="cmd gold-cmd" onclick="copy(this,'!bd')">!bd <span class="icon">⧉</span></span>
-        <span class="inline-desc gold">full details about the 28 hour birthday stream on 4 July 2026 🎉</span>
       </div>
     </div>
   </div>
