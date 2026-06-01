@@ -17,6 +17,9 @@
     --green: #86efac;
     --cmd-bg: rgba(123,0,255,0.12);
     --cmd-border: rgba(123,0,255,0.3);
+    --gold: #fbbf24;
+    --gold-bg: rgba(251,191,36,0.10);
+    --gold-border: rgba(251,191,36,0.30);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -122,6 +125,9 @@
     background: var(--border);
   }
 
+  .section-title.gold { color: var(--gold); }
+  .section-title.gold::after { background: rgba(251,191,36,0.25); }
+
   .commands { display: flex; flex-direction: column; gap: 2px; }
 
   .command {
@@ -135,6 +141,14 @@
   }
 
   .command:hover { background: var(--surface); }
+
+  .command.special {
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+  }
+
+  .command.special:hover { background: rgba(251,191,36,0.15); }
 
   .cmd {
     font-family: 'Nunito', sans-serif;
@@ -169,6 +183,17 @@
     color: var(--green);
   }
 
+  .cmd.gold-cmd {
+    color: var(--gold);
+    background: var(--gold-bg);
+    border-color: var(--gold-border);
+  }
+
+  .cmd.gold-cmd:hover {
+    background: rgba(251,191,36,0.18);
+    border-color: rgba(251,191,36,0.5);
+  }
+
   .desc {
     color: var(--muted);
     font-size: 14px;
@@ -183,6 +208,8 @@
     flex: 1;
     min-width: 140px;
   }
+
+  .inline-desc.gold { color: #e5c97a; }
 
   .label {
     color: var(--muted);
@@ -260,6 +287,7 @@
         <span class="cmd" onclick="copy(this,'!venba')">!venba <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!ws')">!ws <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!wanderstop')">!wanderstop <span class="icon">⧉</span></span>
+        <span class="cmd" onclick="copy(this,'bg3')">bg3 <span class="icon">⧉</span></span>
         <p class="desc">info about the current game</p>
       </div>
     </div>
@@ -373,8 +401,9 @@
         <span class="inline-desc">see how many spells have been cast ✨</span>
       </div>
       <div class="command">
-        <span class="cmd" onclick="copy(this,'!raid')">!raid <span class="icon">⧉</span></span>
-        <span class="inline-desc">send a raid message personalised to your role 🔥</span>
+        <span class="cmd" onclick="copy(this,'!dance')">!dance <span class="icon">⧉</span></span>
+        <span class="cmd" onclick="copy(this,'!shimmy')">!shimmy <span class="icon">⧉</span></span>
+        <span class="inline-desc">get your hips and shoulders going 💃</span>
       </div>
     </div>
   </div>
@@ -402,6 +431,14 @@
         <span class="cmd" onclick="copy(this,'!friends')">!friends <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!streamers')">!streamers <span class="icon">⧉</span></span>
         <span class="cmd" onclick="copy(this,'!streamerfriends')">!streamerfriends <span class="icon">⧉</span></span>
+      </div>
+      <div class="command">
+        <span class="cmd" onclick="copy(this,'!raid')">!raid <span class="icon">⧉</span></span>
+        <span class="inline-desc">send a raid message personalised to your role 🔥</span>
+      </div>
+      <div class="command">
+        <span class="cmd" onclick="copy(this,'!throne')">!throne <span class="icon">⧉</span></span>
+        <span class="inline-desc">links to the Throne wishlist 💛</span>
       </div>
     </div>
   </div>
@@ -453,6 +490,17 @@
       <div class="command">
         <span class="cmd" onclick="copy(this,'!emotes')">!emotes <span class="icon">⧉</span></span>
         <span class="inline-desc">active BTTV emotes in chat</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title gold">🎂 Special Events</div>
+    <div class="commands">
+      <div class="command special">
+        <span class="cmd gold-cmd" onclick="copy(this,'!birthday')">!birthday <span class="icon">⧉</span></span>
+        <span class="cmd gold-cmd" onclick="copy(this,'!bd')">!bd <span class="icon">⧉</span></span>
+        <span class="inline-desc gold">full details about the 28 hour birthday stream on 4 July 2026 🎉</span>
       </div>
     </div>
   </div>
