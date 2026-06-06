@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firesong Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<div class="container">
+
+  <header style="margin-bottom: 28px;">
+    <span class="flame">🔥</span>
+    <h1>Firesong <span>Admin</span></h1>
+  </header>
+  <span class="admin-tag">Private editing page</span>
+
+  <div id="status" class="status hidden"></div>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <div class="card">
+      <h2>Log in 🔑</h2>
+      <p class="note">Paste your GitHub token. Tick remember to skip this next time on this device.</p>
+      <label>GitHub token</label>
+      <input type="password" id="tokenInput" placeholder="github_pat_...">
+      <div class="checkbox-row">
+        <input type="checkbox" id="remember">
+        <label for="remember" style="text-transform:none;color:var(--muted);font-weight:600;margin:0;">Remember on this device</label>
+      </div>
+      <button class="btn full" id="loginBtn">Unlock editing</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dash" class="hidden">
+    <div class="topbar">
+      <span class="who">Editing your commands 💜</span>
+      <button class="logout" id="logoutBtn">Log out</button>
+    </div>
+
+    <div id="editor"></div>
+
+    <div class="save-bar">
+      <button class="btn full" id="saveBtn">Save changes 💾</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
