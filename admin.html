@@ -11,7 +11,7 @@
 <body>
 <div class="container">
 
-  <header style="margin-bottom: 28px;">
+  <header style="margin-bottom: 24px;">
     <span class="flame">🔥</span>
     <h1>Firesong <span>Admin</span></h1>
   </header>
@@ -37,14 +37,43 @@
   <!-- DASHBOARD -->
   <div id="dash" class="hidden">
     <div class="topbar">
-      <span class="who">Editing your commands 💜</span>
+      <span class="who">Editing your site 💜</span>
       <button class="logout" id="logoutBtn">Log out</button>
     </div>
 
-    <div id="editor"></div>
+    <div class="card">
+      <h2>🌙 Home: about</h2>
+      <p class="note">The intro on your homepage.</p>
+      <div id="ed-about"></div>
+      <div class="save-bar"><button class="btn full" data-act="save" data-res="about">Save about 💾</button></div>
+    </div>
 
-    <div class="save-bar">
-      <button class="btn full" id="saveBtn">Save changes 💾</button>
+    <div class="card">
+      <h2>📅 Schedule</h2>
+      <p class="note">Your stream days and times.</p>
+      <div id="ed-schedule"></div>
+      <div class="save-bar"><button class="btn full" data-act="save" data-res="schedule">Save schedule 💾</button></div>
+    </div>
+
+    <div class="card">
+      <h2>💜 Find me (socials)</h2>
+      <p class="note">The links on your homepage.</p>
+      <div id="ed-socials"></div>
+      <div class="save-bar"><button class="btn full" data-act="save" data-res="socials">Save socials 💾</button></div>
+    </div>
+
+    <div class="card">
+      <h2>🌈 Charity</h2>
+      <p class="note">The charity page content and current cause.</p>
+      <div id="ed-charity"></div>
+      <div class="save-bar"><button class="btn full" data-act="save" data-res="charity">Save charity 💾</button></div>
+    </div>
+
+    <div class="card">
+      <h2>⌨️ Commands</h2>
+      <p class="note">Your Twitch command list.</p>
+      <div id="ed-commands"></div>
+      <div class="save-bar"><button class="btn full" data-act="save" data-res="commands">Save commands 💾</button></div>
     </div>
   </div>
 
