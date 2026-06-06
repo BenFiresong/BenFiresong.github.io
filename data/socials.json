@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "icon": "📺", "label": "Twitch", "sub": "the main stream and chat live here", "url": "https://twitch.tv/BenFiresong", "primary": true, "wide": true },
+    { "icon": "🌳", "label": "Linktree", "sub": "every link and the latest schedule", "url": "https://linktr.ee/BenFiresong", "wide": true },
+    { "icon": "💬", "label": "Discord", "sub": "The Firekin", "url": "https://discord.gg/6NPeC5WkHP" },
+    { "icon": "🎬", "label": "YouTube", "sub": "simulcast and shorts", "url": "https://linktr.ee/BenFiresong" },
+    { "icon": "🎵", "label": "TikTok", "sub": "clips from stream", "url": "https://linktr.ee/BenFiresong" },
+    { "icon": "⌨️", "label": "Chat commands", "sub": "the full list", "url": "commands.html" }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "whatWeDo": [
+    "Every month the Firekin gather for a charity marathon, a longer cosy stream where everything we raise goes straight to a cause that matters to this community.",
+    "Past marathons have supported causes close to our hearts, including Rainbow Railroad, who help LGBTQIA+ people find safety from persecution.",
+    "There is never any pressure to give. Lurking, cheering, and spreading the word all help just as much. Every little bit is welcome, and so are you."
+  ],
+  "cause": {
+    "name": "Rainbow Railroad",
+    "desc": "Helping LGBTQIA+ people escape violence and persecution, and find safety.",
+    "link": "https://tilt.fyi/Xbgnf4DwIt"
+  },
+  "steps": [
+    "Donations run through Tiltify. The donate button takes you to our official campaign page, safe and secure.",
+    "Every penny goes to the cause. Funds are handled by Tiltify and sent directly to the charity.",
+    "Watch it grow on stream. Donations show up live during the marathon, with celebrations along the way."
+  ]
+}

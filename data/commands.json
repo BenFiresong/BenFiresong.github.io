@@ -1,0 +1,98 @@
+{
+  "sections": [
+    {
+      "title": "Special Events",
+      "icon": "🎂",
+      "style": "gold",
+      "rows": [
+        { "names": ["!birthday", "!bd"], "desc": "full details about the 28 hour birthday stream on 4 July 2026" },
+        { "names": ["!pride"], "desc": "a pride celebration just for you 🏳️‍🌈" }
+      ]
+    },
+    {
+      "title": "Games",
+      "icon": "🎮",
+      "rows": [
+        { "names": ["!kena", "!loftia", "!palia", "!venba", "!ws", "!wanderstop", "bg3"] }
+      ]
+    },
+    {
+      "title": "Cauldron",
+      "icon": "🌿",
+      "rows": [
+        { "names": [{ "label": "!add [ingredient]", "copy": "!add " }], "desc": "add something to the cauldron" },
+        { "names": ["!cauldron"], "desc": "see what is in the cauldron so far" }
+      ]
+    },
+    {
+      "title": "Giveaway",
+      "icon": "🎁",
+      "rows": [
+        { "label": "Enter:", "names": ["!enter", "!ticket", "!ignis", "!ember", "!ignite"] },
+        { "label": "Claim:", "names": ["!claim", "!mine", "!snatch", "!bind", "!summon"] }
+      ]
+    },
+    {
+      "title": "Plushie Counter",
+      "icon": "🧸",
+      "rows": [
+        { "names": ["!plush", "!plushie"], "desc": "logs a plushie drop, adds 1 to the session count" },
+        { "names": ["!dp", "!doublePlush", "!doublePlushie"], "desc": "logs a double plushie drop, adds 2 to the session count" }
+      ]
+    },
+    {
+      "title": "Fun & Chat",
+      "icon": "✨",
+      "rows": [
+        { "names": ["!adores", "!clip", "!cmds", "!joke", "!lurk", "!magic", "!meow", "!miau", "!qotd", "!queer", "!roasts", "!sassy", "!socials", "!hype", "!bewitch", "!sparkle"] },
+        { "names": ["!unlurk", "!back"], "desc": "let chat know you're back from lurk mode" },
+        { "names": [{ "label": "!hbd", "copy": "!hbd " }], "desc": "happy birthday, optional @ someone" },
+        { "names": [{ "label": "!shbd", "copy": "!shbd " }], "desc": "super happy birthday, once every 20 min, optional @ someone" },
+        { "names": ["!streams", "!sc"], "desc": "how many times Ben has gone live" },
+        { "names": [{ "label": "!cast [optional: anything on your mind]", "copy": "!cast " }], "desc": "cast a spell for yourself and the stream" },
+        { "names": ["!casts", "!spells"], "desc": "see how many spells have been cast" },
+        { "names": ["!dance", "!shimmy"], "desc": "get your hips and shoulders going" },
+        { "names": ["!eats", "!eating"], "desc": "mark something that ate and left no crumbs" },
+        { "names": ["!serving"], "desc": "mark something serving pure flair" },
+        { "names": ["!sucky"], "desc": "mark something sucky" },
+        { "names": ["!trash"], "desc": "mark something trashy" },
+        { "names": ["!bs"], "desc": "call out something as bs" },
+        { "names": ["!cat"], "desc": "drop a random cat gif on screen" }
+      ]
+    },
+    {
+      "title": "Links & Community",
+      "icon": "💬",
+      "rows": [
+        { "names": ["!coven"], "desc": "Phoenix Coven Discord, our Palia community server" },
+        { "names": ["!discord", "!firekin"], "desc": "Firekin Discord, our streaming community" },
+        { "names": ["!nomads", "!cybernomads", "!cn", "!alliance"], "desc": "Cyber Nomads Discord" },
+        { "names": ["!friends", "!streamers", "!streamerfriends"] },
+        { "names": ["!raid"], "desc": "send a raid message to chat, with emotes matched to whether you're a sub, follower, or newcomer" },
+        { "names": ["!throne"], "desc": "If you ever want to show a little more love, I have a Throne wishlist" }
+      ]
+    },
+    {
+      "title": "Other",
+      "icon": "💝",
+      "rows": [
+        { "names": ["!charity", "!rr", "!rainbowRailroad"] },
+        { "names": ["!donate", "!donation"] },
+        { "names": ["!love", "!valentine"] },
+        { "names": [{ "label": "!suggest [your suggestion]", "copy": "!suggest " }], "desc": "got an idea? throw it in!" },
+        { "names": ["!dsd", "!daddy", "!sd", "!sugar daddy"], "desc": "👀" }
+      ]
+    },
+    {
+      "title": "StreamElements",
+      "icon": "📊",
+      "badge": "SE",
+      "rows": [
+        { "names": ["!accountage"], "desc": "how long your account has existed" },
+        { "names": ["!followage"], "desc": "how long you have been following" },
+        { "names": ["!watchtime"], "desc": "how much time you have spent in stream" },
+        { "names": ["!emotes"], "desc": "active BTTV emotes in chat" }
+      ]
+    }
+  ]
+}

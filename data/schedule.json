@@ -1,0 +1,8 @@
+{
+  "days": [
+    { "name": "Tuesday", "time": "starts 5pm to 7pm UTC", "game": "variety cosy games" },
+    { "name": "Thursday", "time": "starts 5pm to 7pm UTC", "game": "variety cosy games" },
+    { "name": "Saturday", "time": "starts 5pm to 7pm UTC", "game": "Palia" }
+  ],
+  "note": "The stream starts somewhere in that window. Days and times can shift a little. The Linktree always has the latest."
+}
