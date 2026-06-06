@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BenFiresong — Commands</title>
+<title>BenFiresong — Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -15,8 +15,6 @@
     --text: #f0eaff;
     --muted: #a89ec0;
     --green: #86efac;
-    --cmd-bg: rgba(123,0,255,0.12);
-    --cmd-border: rgba(123,0,255,0.3);
     --gold: #fbbf24;
     --gold-bg: rgba(251,191,36,0.10);
     --gold-border: rgba(251,191,36,0.30);
@@ -50,18 +48,51 @@
   .container {
     max-width: 680px;
     margin: 0 auto;
-    padding: 48px 20px 80px;
+    padding: 40px 20px 80px;
     position: relative;
     z-index: 1;
   }
 
+  /* Nav */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+
+  nav a:hover {
+    color: var(--accent2);
+    border-color: rgba(123,0,255,0.5);
+  }
+
+  nav a.active {
+    color: var(--text);
+    background: rgba(123,0,255,0.15);
+    border-color: rgba(123,0,255,0.4);
+  }
+
   header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 44px;
   }
 
   .flame {
-    font-size: 40px;
+    font-size: 44px;
     display: block;
     margin-bottom: 12px;
     animation: flicker 3s ease-in-out infinite;
@@ -73,10 +104,9 @@
   }
 
   h1 {
-    font-size: clamp(26px, 6vw, 36px);
+    font-size: clamp(28px, 7vw, 40px);
     font-weight: 800;
-    color: var(--text);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     letter-spacing: -0.01em;
   }
 
@@ -85,26 +115,17 @@
   .tagline {
     color: var(--muted);
     font-size: 15px;
-    font-weight: 400;
   }
 
   .divider {
     width: 80px;
     height: 2px;
     background: linear-gradient(to right, transparent, var(--accent), transparent);
-    margin: 20px auto;
+    margin: 22px auto;
     border-radius: 2px;
   }
 
-  .hint {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 8px;
-  }
-
-  .section {
-    margin-bottom: 32px;
-  }
+  .section { margin-bottom: 36px; }
 
   .section-title {
     font-size: 12px;
@@ -112,7 +133,7 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--accent2);
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -125,130 +146,91 @@
     background: var(--border);
   }
 
-  .section-title.gold { color: var(--gold); }
-  .section-title.gold::after { background: rgba(251,191,36,0.25); }
-
-  .commands { display: flex; flex-direction: column; gap: 2px; }
-
-  .command {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    transition: background 0.15s;
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
   }
 
-  .command:hover { background: var(--surface); }
+  .about-card p { margin-bottom: 12px; }
+  .about-card p:last-child { margin-bottom: 0; }
+  .about-card strong { color: var(--accent2); font-weight: 700; }
 
-  .command.special {
-    background: var(--gold-bg);
-    border: 1px solid var(--gold-border);
-    border-radius: 10px;
-  }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 
-  .command.special:hover { background: rgba(251,191,36,0.15); }
-
-  .cmd {
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
+  .pill {
+    font-size: 12px;
     font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 99px;
+    background: rgba(123,0,255,0.12);
+    border: 1px solid rgba(123,0,255,0.3);
     color: var(--accent2);
-    background: var(--cmd-bg);
-    border: 1px solid var(--cmd-border);
-    border-radius: 6px;
-    padding: 4px 10px;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
-    user-select: none;
-    white-space: nowrap;
-    display: inline-flex;
+  }
+
+  /* Schedule */
+  .schedule { display: flex; flex-direction: column; gap: 8px; }
+
+  .day {
+    display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
   }
 
-  .cmd:hover {
-    background: rgba(123,0,255,0.22);
+  .day .name {
+    font-weight: 800;
+    font-size: 15px;
+    width: 110px;
+    flex-shrink: 0;
+  }
+
+  .day .time { color: var(--accent2); font-weight: 700; font-size: 14px; }
+  .day .game { color: var(--muted); font-size: 14px; margin-left: auto; }
+
+  .schedule-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Socials */
+  .socials { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  }
+
+  .social:hover {
     border-color: rgba(123,0,255,0.5);
+    background: rgba(123,0,255,0.08);
+    transform: translateY(-2px);
   }
 
-  .cmd:active { transform: scale(0.97); }
+  .social .ico { font-size: 22px; flex-shrink: 0; }
+  .social .label { font-weight: 700; font-size: 14px; }
+  .social .sub { color: var(--muted); font-size: 12px; }
+  .social .txt { display: flex; flex-direction: column; line-height: 1.3; }
 
-  .cmd .icon { font-size: 10px; opacity: 0.6; }
-
-  .cmd.copied {
-    background: rgba(134,239,172,0.12);
-    border-color: rgba(134,239,172,0.4);
-    color: var(--green);
+  .social.wide { grid-column: 1 / -1; }
+  .social.primary {
+    background: rgba(123,0,255,0.15);
+    border-color: rgba(123,0,255,0.4);
   }
-
-  .cmd.gold-cmd {
-    color: var(--gold);
-    background: var(--gold-bg);
-    border-color: var(--gold-border);
-  }
-
-  .cmd.gold-cmd:hover {
-    background: rgba(251,191,36,0.18);
-    border-color: rgba(251,191,36,0.5);
-  }
-
-  .desc {
-    color: var(--muted);
-    font-size: 14px;
-    width: 100%;
-    padding-left: 2px;
-    margin-top: 2px;
-  }
-
-  .inline-desc {
-    color: var(--muted);
-    font-size: 14px;
-    flex: 1;
-    min-width: 140px;
-  }
-
-  .inline-desc.gold { color: #e5c97a; }
-
-  .label {
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .badge {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    padding: 2px 7px;
-    border-radius: 99px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .badge-ai { background: rgba(123,0,255,0.18); color: var(--accent2); border: 1px solid rgba(123,0,255,0.3); }
-  .badge-se { background: rgba(180,100,220,0.15); color: #d4a0f0; border: 1px solid rgba(180,100,220,0.25); }
-
-  .toast {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%) translateY(60px);
-    background: var(--green);
-    color: #0c0a12;
-    font-family: 'Nunito', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 8px 20px;
-    border-radius: 99px;
-    transition: transform 0.25s ease;
-    pointer-events: none;
-    z-index: 100;
-  }
-
-  .toast.show { transform: translateX(-50%) translateY(0); }
 
   footer {
     text-align: center;
@@ -261,241 +243,113 @@
   footer a:hover { text-decoration: underline; }
 
   @media (max-width: 480px) {
-    .container { padding: 32px 14px 60px; }
-    .command { padding: 9px 10px; }
-    .cmd { font-size: 13px; }
+    .container { padding: 28px 14px 60px; }
+    .socials { grid-template-columns: 1fr; }
+    .day { flex-wrap: wrap; }
+    .day .name { width: auto; }
+    .day .game { margin-left: 0; width: 100%; }
   }
 </style>
 </head>
 <body>
 <div class="container">
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="commands.html">Commands</a>
+    <a href="charity.html">Charity</a>
+  </nav>
+
   <header>
     <span class="flame">🔥</span>
     <h1>Ben<span>Firesong</span></h1>
     <p class="tagline">cosy · witchy · welcoming · LGBTQIA+</p>
     <div class="divider"></div>
-    <p class="hint">Tap any command to copy it.</p>
   </header>
 
   <div class="section">
-    <div class="section-title gold">🎂 Special Events</div>
-    <div class="commands">
-      <div class="command special">
-        <span class="cmd gold-cmd" onclick="copy(this,'!birthday')">!birthday <span class="icon">⧉</span></span>
-        <span class="cmd gold-cmd" onclick="copy(this,'!bd')">!bd <span class="icon">⧉</span></span>
-        <span class="inline-desc gold">full details about the 28 hour birthday stream on 4 July 2026</span>
+    <div class="section-title">🌙 About</div>
+    <div class="about-card">
+      <p>Hello, beautiful people. I'm Ben, and this is the home of the <strong>Firekin</strong>, a kind, generous, slightly sassy little community that is very much on fire.</p>
+      <p>The streams are cosy, low input, and sensory friendly. No loud music, no sudden noises, just a warm space to settle into. Everyone is welcome here, and the channel is explicitly LGBTQIA+ welcoming and 18+.</p>
+      <p>Come lurk, come chat, come exist quietly in the corner. There is never any pressure to do anything but be yourself.</p>
+      <div class="pills">
+        <span class="pill">Cosy</span>
+        <span class="pill">Sensory friendly</span>
+        <span class="pill">LGBTQIA+ welcoming</span>
+        <span class="pill">18+</span>
+        <span class="pill">Lurkers appreciated</span>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">🎮 Games</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!kena')">!kena <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!loftia')">!loftia <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!palia')">!palia <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!venba')">!venba <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!ws')">!ws <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!wanderstop')">!wanderstop <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'bg3')">bg3 <span class="icon">⧉</span></span>
+    <div class="section-title">📅 Schedule</div>
+    <div class="schedule">
+      <div class="day">
+        <span class="name">Tuesday</span>
+        <span class="time">starts 5pm to 7pm UTC</span>
+        <span class="game">variety cosy games</span>
+      </div>
+      <div class="day">
+        <span class="name">Thursday</span>
+        <span class="time">starts 5pm to 7pm UTC</span>
+        <span class="game">variety cosy games</span>
+      </div>
+      <div class="day">
+        <span class="name">Saturday</span>
+        <span class="time">starts 5pm to 7pm UTC</span>
+        <span class="game">Palia</span>
       </div>
     </div>
+    <p class="schedule-note">The stream starts somewhere in that window. Days and times can shift a little. The Linktree always has the latest.</p>
   </div>
 
   <div class="section">
-    <div class="section-title">🌿 Cauldron</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!add ')">!add [ingredient] <span class="icon">⧉</span></span>
-        <span class="inline-desc">add something to the cauldron</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!cauldron')">!cauldron <span class="icon">⧉</span></span>
-        <span class="inline-desc">see what is in the cauldron so far</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">🎁 Giveaway</div>
-    <div class="commands">
-      <div class="command">
-        <span class="label">Enter:</span>
-        <span class="cmd" onclick="copy(this,'!enter')">!enter <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!ticket')">!ticket <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!ignis')">!ignis <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!ember')">!ember <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!ignite')">!ignite <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="label">Claim:</span>
-        <span class="cmd" onclick="copy(this,'!claim')">!claim <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!mine')">!mine <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!snatch')">!snatch <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!bind')">!bind <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!summon')">!summon <span class="icon">⧉</span></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">🧸 Plushie Counter</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!plush')">!plush <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!plushie')">!plushie <span class="icon">⧉</span></span>
-        <span class="inline-desc">logs a plushie drop, adds 1 to the session count</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!dp')">!dp <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!doublePlush')">!doublePlush <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!doublePlushie')">!doublePlushie <span class="icon">⧉</span></span>
-        <span class="inline-desc">logs a double plushie drop, adds 2 to the session count</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">✨ Fun & Chat</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!adores')">!adores <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!clip')">!clip <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!cmds')">!cmds <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!joke')">!joke <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!lurk')">!lurk <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!magic')">!magic <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!meow')">!meow <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!miau')">!miau <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!qotd')">!qotd <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!queer')">!queer <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!roasts')">!roasts <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!sassy')">!sassy <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!socials')">!socials <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!hype')">!hype <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!bewitch')">!bewitch <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!sparkle')">!sparkle <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!unlurk')">!unlurk <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!back')">!back <span class="icon">⧉</span></span>
-        <span class="inline-desc">let chat know you're back from lurk mode</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!hbd ')">!hbd <span class="icon">⧉</span></span>
-        <span class="inline-desc">happy birthday, optional @ someone</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!shbd ')">!shbd <span class="icon">⧉</span></span>
-        <span class="inline-desc">super happy birthday, once every 20 min, optional @ someone</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!streams')">!streams <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!sc')">!sc <span class="icon">⧉</span></span>
-        <span class="inline-desc">how many times Ben has gone live</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!cast ')">!cast [optional: anything on your mind] <span class="icon">⧉</span></span>
-        <span class="inline-desc">cast a spell for yourself and the stream</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!casts')">!casts <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!spells')">!spells <span class="icon">⧉</span></span>
-        <span class="inline-desc">see how many spells have been cast</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!dance')">!dance <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!shimmy')">!shimmy <span class="icon">⧉</span></span>
-        <span class="inline-desc">get your hips and shoulders going</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">💬 Links & Community</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!coven')">!coven <span class="icon">⧉</span></span>
-        <span class="inline-desc">Phoenix Coven Discord, our Palia community server</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!discord')">!discord <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!firekin')">!firekin <span class="icon">⧉</span></span>
-        <span class="inline-desc">Firekin Discord, our streaming community</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!nomads')">!nomads <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!cybernomads')">!cybernomads <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!cn')">!cn <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!alliance')">!alliance <span class="icon">⧉</span></span>
-        <span class="inline-desc">Cyber Nomads Discord</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!friends')">!friends <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!streamers')">!streamers <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!streamerfriends')">!streamerfriends <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!raid')">!raid <span class="icon">⧉</span></span>
-        <span class="inline-desc">send a raid message to chat, with emotes matched to whether you're a sub, follower, or newcomer</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!throne')">!throne <span class="icon">⧉</span></span>
-        <span class="inline-desc">If you ever want to show a little more love, I have a Throne wishlist</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">💝 Other</div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!charity')">!charity <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!rr')">!rr <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!rainbowRailroad')">!rainbowRailroad <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!donate')">!donate <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!donation')">!donation <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!love')">!love <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!valentine')">!valentine <span class="icon">⧉</span></span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!suggest ')">!suggest [your suggestion] <span class="icon">⧉</span></span>
-        <span class="inline-desc">got an idea? throw it in!</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!dsd')">!dsd <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!daddy')">!daddy <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!sd')">!sd <span class="icon">⧉</span></span>
-        <span class="cmd" onclick="copy(this,'!sugar daddy')">!sugar daddy <span class="icon">⧉</span></span>
-        <span class="inline-desc">👀</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">📊 StreamElements <span class="badge badge-se">SE</span></div>
-    <div class="commands">
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!accountage')">!accountage <span class="icon">⧉</span></span>
-        <span class="inline-desc">how long your account has existed</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!followage')">!followage <span class="icon">⧉</span></span>
-        <span class="inline-desc">how long you have been following</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!watchtime')">!watchtime <span class="icon">⧉</span></span>
-        <span class="inline-desc">how much time you have spent in stream</span>
-      </div>
-      <div class="command">
-        <span class="cmd" onclick="copy(this,'!emotes')">!emotes <span class="icon">⧉</span></span>
-        <span class="inline-desc">active BTTV emotes in chat</span>
-      </div>
+    <div class="section-title">💜 Find Me</div>
+    <div class="socials">
+      <a class="social primary wide" href="https://twitch.tv/BenFiresong" target="_blank">
+        <span class="ico">📺</span>
+        <span class="txt">
+          <span class="label">Twitch</span>
+          <span class="sub">the main stream and chat live here</span>
+        </span>
+      </a>
+      <a class="social wide" href="https://linktr.ee/BenFiresong" target="_blank">
+        <span class="ico">🌳</span>
+        <span class="txt">
+          <span class="label">Linktree</span>
+          <span class="sub">every link and the latest schedule</span>
+        </span>
+      </a>
+      <a class="social" href="https://discord.gg/6NPeC5WkHP" target="_blank">
+        <span class="ico">💬</span>
+        <span class="txt">
+          <span class="label">Discord</span>
+          <span class="sub">The Firekin</span>
+        </span>
+      </a>
+      <a class="social" href="https://linktr.ee/BenFiresong" target="_blank">
+        <span class="ico">🎬</span>
+        <span class="txt">
+          <span class="label">YouTube</span>
+          <span class="sub">simulcast and shorts</span>
+        </span>
+      </a>
+      <a class="social" href="https://linktr.ee/BenFiresong" target="_blank">
+        <span class="ico">🎵</span>
+        <span class="txt">
+          <span class="label">TikTok</span>
+          <span class="sub">clips from stream</span>
+        </span>
+      </a>
+      <a class="social" href="commands.html">
+        <span class="ico">⌨️</span>
+        <span class="txt">
+          <span class="label">Chat commands</span>
+          <span class="sub">the full list</span>
+        </span>
+      </a>
     </div>
   </div>
 
@@ -503,19 +357,5 @@
     live at <a href="https://twitch.tv/BenFiresong" target="_blank">twitch.tv/BenFiresong</a> · join us at <a href="https://discord.gg/6NPeC5WkHP" target="_blank">The Firekin Discord</a>
   </footer>
 </div>
-
-<div class="toast" id="toast">Copied!</div>
-
-<script>
-  function copy(el, text) {
-    navigator.clipboard.writeText(text).then(() => {
-      el.classList.add('copied');
-      setTimeout(() => el.classList.remove('copied'), 1200);
-      const t = document.getElementById('toast');
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 1500);
-    });
-  }
-</script>
 </body>
 </html>
