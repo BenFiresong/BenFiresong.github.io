@@ -5,252 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BenFiresong — Charity</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0c0a12;
-    --surface: #1a1628;
-    --border: #2e2650;
-    --accent: #7B00FF;
-    --accent2: #c084fc;
-    --text: #f0eaff;
-    --muted: #a89ec0;
-    --green: #86efac;
-    --gold: #fbbf24;
-    --gold-bg: rgba(251,191,36,0.10);
-    --gold-border: rgba(251,191,36,0.30);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(123,0,255,0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Nav */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 99px;
-    border: 1px solid var(--border);
-    transition: color 0.15s, border-color 0.15s, background 0.15s;
-  }
-
-  nav a:hover {
-    color: var(--accent2);
-    border-color: rgba(123,0,255,0.5);
-  }
-
-  nav a.active {
-    color: var(--text);
-    background: rgba(123,0,255,0.15);
-    border-color: rgba(123,0,255,0.4);
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 44px;
-  }
-
-  .flame {
-    font-size: 44px;
-    display: block;
-    margin-bottom: 12px;
-    animation: flicker 3s ease-in-out infinite;
-  }
-
-  @keyframes flicker {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.85; transform: scale(1.06); }
-  }
-
-  h1 {
-    font-size: clamp(28px, 7vw, 40px);
-    font-weight: 800;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-
-  h1 span { color: var(--accent2); }
-
-  .tagline {
-    color: var(--muted);
-    font-size: 15px;
-  }
-
-  .divider {
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--accent), transparent);
-    margin: 22px auto;
-    border-radius: 2px;
-  }
-
-  .section { margin-bottom: 36px; }
-
-  .section-title {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--accent2);
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  .about-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 22px;
-  }
-
-  .about-card p { margin-bottom: 12px; }
-  .about-card p:last-child { margin-bottom: 0; }
-  .about-card strong { color: var(--accent2); font-weight: 700; }
-
-  /* Featured cause */
-  .cause {
-    background: linear-gradient(135deg, rgba(123,0,255,0.12), rgba(192,132,252,0.06));
-    border: 1px solid rgba(123,0,255,0.35);
-    border-radius: 16px;
-    padding: 26px 24px;
-    text-align: center;
-  }
-
-  .cause .badge {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green);
-    background: rgba(134,239,172,0.12);
-    border: 1px solid rgba(134,239,172,0.35);
-    padding: 4px 14px;
-    border-radius: 99px;
-    display: inline-block;
-    margin-bottom: 14px;
-  }
-
-  .cause h2 {
-    font-size: 24px;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
-
-  .cause p {
-    color: var(--muted);
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-
-  .donate-btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-weight: 800;
-    font-size: 15px;
-    text-decoration: none;
-    padding: 13px 32px;
-    border-radius: 99px;
-    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-    box-shadow: 0 4px 20px rgba(123,0,255,0.4);
-  }
-
-  .donate-btn:hover {
-    background: #8f1aff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 26px rgba(123,0,255,0.55);
-  }
-
-  /* How it works */
-  .steps { display: flex; flex-direction: column; gap: 10px; }
-
-  .step {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-  }
-
-  .step .num {
-    font-weight: 800;
-    color: var(--accent2);
-    font-size: 18px;
-    flex-shrink: 0;
-    width: 24px;
-  }
-
-  .step .txt { font-size: 14px; }
-  .step .txt strong { color: var(--text); font-weight: 700; }
-  .step .txt span { color: var(--muted); }
-
-  footer {
-    text-align: center;
-    margin-top: 48px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  footer a { color: var(--accent2); text-decoration: none; font-weight: 600; }
-  footer a:hover { text-decoration: underline; }
-
-  @media (max-width: 480px) {
-    .container { padding: 28px 14px 60px; }
-    .cause { padding: 22px 18px; }
-  }
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
@@ -270,44 +25,24 @@
 
   <div class="section">
     <div class="section-title">🌈 What we do</div>
-    <div class="about-card">
-      <p>Every month the Firekin gather for a <strong>charity marathon</strong>, a longer cosy stream where everything we raise goes straight to a cause that matters to this community.</p>
-      <p>Past marathons have supported causes close to our hearts, including <strong>Rainbow Railroad</strong>, who help LGBTQIA+ people find safety from persecution.</p>
-      <p>There is never any pressure to give. Lurking, cheering, and spreading the word all help just as much. Every little bit is welcome, and so are you.</p>
-    </div>
+    <div id="charity-about-root"></div>
   </div>
 
   <div class="section">
     <div class="section-title">💝 Current cause</div>
-    <div class="cause">
-      <span class="badge">Now raising</span>
-      <h2>Rainbow Railroad</h2>
-      <p>Helping LGBTQIA+ people escape violence and persecution, and find safety.</p>
-      <a class="donate-btn" href="https://tilt.fyi/Xbgnf4DwIt" target="_blank">Donate 💜</a>
-    </div>
+    <div id="cause-root"></div>
   </div>
 
   <div class="section">
     <div class="section-title">✨ How it works</div>
-    <div class="steps">
-      <div class="step">
-        <span class="num">1</span>
-        <span class="txt"><strong>Donations run through Tiltify.</strong> <span>The donate button takes you to our official campaign page, safe and secure.</span></span>
-      </div>
-      <div class="step">
-        <span class="num">2</span>
-        <span class="txt"><strong>Every penny goes to the cause.</strong> <span>Funds are handled by Tiltify and sent directly to the charity.</span></span>
-      </div>
-      <div class="step">
-        <span class="num">3</span>
-        <span class="txt"><strong>Watch it grow on stream.</strong> <span>Donations show up live during the marathon, with celebrations along the way.</span></span>
-      </div>
-    </div>
+    <div id="steps-root"></div>
   </div>
 
   <footer>
     live at <a href="https://twitch.tv/BenFiresong" target="_blank">twitch.tv/BenFiresong</a> · join us at <a href="https://discord.gg/6NPeC5WkHP" target="_blank">The Firekin Discord</a>
   </footer>
 </div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>
